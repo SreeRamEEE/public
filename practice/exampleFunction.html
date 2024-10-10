@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /**function values(){
+                var a= parseInt(prompt("a value")); 
+                var b= parseInt(prompt("b value")); 
+                
+                return a+b
+            }
+             console.log(values( ));
+             console.log(values());
+
+             **/
+            //using variable function
+           
+        /** var employeSalary=function( totalSalary ){
+              taxAmount=   empTaxAmount(totalSalary);
+              pfAmount= empPfAmount(totalSalary);
+               return totalSalary-taxAmount-pfAmount;
+            }
+            var empTaxAmount=function( totalSalary){
+            var taxAmount=(totalSalary*30)/100;
+            return taxAmount;
+            }
+            var empPfAmount=function(totalSalary){
+              var  pfAmount=(totalSalary*5)/100;
+              return pfAmount;
+            
+            }
+            console.log(employeSalary( 100000));
+           console.log("employe tax amount ="+ empTaxAmount(100000 ));
+           console.log("employe pf amount ="+ empPfAmount(100000));**/
+
+           
+ //using arrow functions and minified code
+          
+           employeSalary=(totalSalary)=>{
+            
+             
+
+            return totalSalary-empTaxAmount( totalSalary)-empPfAmount(totalSalary);
+
+            
+           }
+           empTaxAmount=(totalSalary)=>{
+            return (totalSalary*30)/100;
+           }
+           empPfAmount=(totalSalary)=>{
+            return (totalSalary*12)/100;
+            
+           }
+           console.log( "employe on hand amount="+employeSalary(100000));
+            console.log("employe tax amout="+empTaxAmount(100000));
+            console.log("employe pf amount="+empPfAmount(100000));
+            
+          
+        </script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        
+            body{
+                background-color: violet;
+            }
+        ul{
+            background-color:rgb(122, 58, 122);
+            width: 500px;
+            margin:5px auto;
+            padding: 10px;
+            list-style-type: none;
+            margin-top: 100px;
+
+        }
+        li{
+            color: white;
+            padding: 10px;
+            position: relative;
+            left: 50px;
+        }
+       ul li label{
+            margin-right:20px ;
+        }
+        input{
+            position: relative;
+            left: 60px;
+        }
+        </style>
+ </head> 
+<body>
+    <form >
+        <ul>
+            <li>
+                <label for="Emp_name">Name:</label>
+                <input type="text" name="Emp_name" placeholder="your name">
+            </li>
+           <li> <label for="Emp_email">Email:</label>
+            <input type="email" name="Emp_email" placeholder="your email">
+
+            </li>
+            <li>
+                <label for="Emp_password"> Password:</label>
+                <input type="password"  name="Emp_password" >
+            </li>
+            <li>
+                <label for="number">Phone Number:</label>
+                <input type="number" name="number">
+            </li>
+            <li>
+                <label for="gender">Gender:</label>
+                
+                <input type="radio" value="male" name="gender">male
+                <input type="radio"value="female" name="gender">female
+                
+
+            </li>
+            <li>
+                <label for="language" >
+                    Language:
+                </label>
+                <select name="language" value="select language"  >
+                    <option >English</option>
+                    <option>Hindi</option>
+                    <option>Telugu</option>
+                    <option>Tamil</option>
+                </select>
+
+            </li>
+            <li>
+                <label for="text">About:</label>&nbsp;
+                <textarea name="text"  cols="20" rows="5"></textarea>
+            </li>
+            <li >
+                <input type="submit" value="Register">
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function addition(a,b){
+              return a+b;  
+            }
+            function subtraction(a,b){
+                return a-b;
+            }
+            function multipilication(a,b){
+                return a*b;
+            }
+            function division(a,b){
+                return a/b;
+            }
+
+            // var c= addition(2,3) // 5
+            
+
+            // console.log( addition(2,3));
+
+            function swithOPerater(){
+
+            
+            var a=prompt("enter a value");
+            a=parseInt(a);
+            var b=prompt("enter b value");
+            b=parseInt(b);
+
+            var options=prompt("enter");
+            operator(a,b,options);
+            }
+            function operator( a,b,options){
+
+            
+            switch(options){
+                case'+':
+                 console.log("sum of a,b is"+addition(a,b));
+                
+                
+                break;
+                
+                // var sum=a+b;
+                case'-':
+                var sub= subtraction(a,b);
+                console.log("sub of a,b is"+sub);  
+                break;
+
+                case'*':
+                var mul=multipilication(a,b);
+                console.log("mul of a,b is"+mul);  
+                break;
+
+                case'/':
+                var div=division(a,b);
+                console.log("div of a,b is"+div);
+                break;
+                default:
+                    console.log("you have wrong value");
+            }
+        }
+        swithOPerater();
+
+        // function test(){
+        //     var a=20;
+        //     var b=30;
+
+        //     return addition(a,b)
+        // }
+
+        // var result= test();
+
+        // console.log(result)
+
+        
+        </script>
+    </body>
+</html>

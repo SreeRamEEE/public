@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div{
+                padding: 10px;
+            }
+            /* div::after{
+                content: " *";
+                color: red;
+            } */
+            div:first-child::after,div:nth-child(2)::after,div:last-child::after{
+                content: " *";
+                color: red;
+            }
+            /* div::before{
+                content: "1.";
+            } */
+            .paragraph::first-line{
+                background-color: aqua;
+            
+            }
+            .paragraph::first-letter{
+                color: blue;
+                font-size: 40px;
+            }
+            a:hover{
+                color: red;
+            }
+            a:focos{
+                background-color: aqua;
+            }
+            a:visited{
+                color: darkmagenta;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>Full Name</div>
+        <div>Email</div>
+        <div>phone Number</div>
+        <div>where did we go wrong?</div>
+        <div class="paragraph"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             A quis temporibus voluptatibus quidem ducimus voluptatem quaerat 
+            exercitationem iste possimus mollitia commodi repudiandae dolore debitis,
+             odio quod quia odit tenetur eum.</div>
+         <a href="http//www.google.com">google</a>    
+        
+    </body>
+</html>

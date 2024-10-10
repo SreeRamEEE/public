@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isro sample API using</title>
+    <script src="../../axios.js"></script>
+    <script src="../../jquery.js"></script>
+
+</head>
+<body>
+    <ul class="mainultag">
+
+    </ul>
+    <div >
+        <button onclick="getlist()" value="isro Data" >get Data</button>
+    </div>
+
+
+    <script>
+      getlist=()=>{
+        axios.get('https://isro.vercel.app/api/spacecrafts').then((response)=>{
+        console.log(response);
+        createlist(response.data.spacecrafts)
+       }).catch((error)=>{
+        console.log(error);
+
+       })
+      }
+      var createlist=(list)=>{
+      
+       list.forEach((item)=>{
+        var litag1= $("<li/>").html(item.id)
+        var litag2=$('<li/>').html(item.name)
+        
+      $('ul').append(litag1);
+      $('ul').append(litag2);
+
+        })
+      }
+
+    </script>
+    
+</body>
+</html>

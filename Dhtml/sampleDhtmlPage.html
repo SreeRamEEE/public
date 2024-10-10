@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sample DHTML page </h2>
+    <div class="content">
+
+    </div>
+
+ 
+    <script>
+         var ptag=document.createElement('p');
+         ptag.innerText="hello world";
+         ptag.setAttribute('id','myid')
+         ptag.style.color='green';
+        var p2tag=document.createElement('p');
+        p2tag.style['font-size']='20px';
+        p2tag.style.color='red';
+        p2tag.innerText='welcome';
+
+
+
+    document.querySelector('div').append(ptag);
+    document.querySelector('div').append(p2tag);
+    
+
+//    var tag= document.getElementsByClassName('.content')
+//    tag.append(p2tag);
+
+    console.log(ptag)
+    console.log(p2tag)
+
+    // document.body.app
+
+       
+    </script>
+</body>
+</html>

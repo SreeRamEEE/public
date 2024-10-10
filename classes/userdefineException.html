@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<style>
+    li{
+        list-style-type: none;
+        margin: 20px;
+    }
+    .error{
+        color: red;
+        font-size: 10px;
+        display: none;
+    }
+    #resultMsg{
+        color: green;
+        font-size: 20px;
+        display:none ;
+    }
+</style>
+<body>
+    <ul>
+        <li> Enter Name:
+            <input type="text" id="uName" >
+            <div class="error n_error">Name is mandatory field</div>
+        </li>
+        <li>enter Age:
+            <input type="text" id="uAge">
+            <div class="error a_error">Age above  21</div>
+
+        </li>
+        <li id="resultMsg"></li>
+        <li>
+            <input type="button" value="save" onclick="save()">
+        </li>
+
+    </ul>
+    <script>
+        save=()=>{
+            var obj={}
+            obj.name=$('#uName').val();
+            obj.age=$('#uAge').val();
+            try{
+            if(!obj.name.trim()){
+                    throw 'nameErr'
+                }else{
+                    $('.n_error').hide();
+                 }
+            if(obj.age<21){
+                        throw 'ageErr'
+                    }else{
+                        $('.a_error').hide();
+
+                    }
+
+                
+            }catch(err){
+                if(err=='nameErr'){
+                    // document. querySelector('.name_err').show();
+                    $('.n_error').show();
+                }else if(err=='ageErr'){
+                    $('.a_error').show();
+                }
+
+
+            }
+            reset();
+
+           
+            $('#resultMsg').show()
+            document.querySelector('#resultMsg').innerHTML=("saved sucessfull")
+
+        }
+       var reset=()=>{
+                $("#uName").val('');
+                $("#uAge").val('');
+            }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+  

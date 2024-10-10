@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(var  i=0;i<=1000;i++){
+
+            var num=String(i); //"1"
+            var temp=i;
+            var sum=0;
+          numLength=num.length;
+            while(num>0){
+               // debugger;
+                var rem=num%10;
+                num=parseInt(num/10);
+                sum+=rem**numLength;
+                // sum=sum+(rem*rem*rem);
+
+            }
+            if(temp==sum){
+                console.log(sum);
+            }
+        }
+
+
+       
+    </script>
+</body>
+</html>

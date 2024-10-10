@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Class</h3>
+    <p>class is a Blueprint of objects</p>
+    <p>multiple objects to create an class</p>
+    <script>
+        class ClassA{
+            constructor(myName,myClg){
+                this.name=myName;
+                this.college=myClg;
+
+            }
+            display(a,b){ //method| function 
+      console.log(a+b);
+
+            }
+    }
+    var A=new ClassA('khyathi','ssr');
+    // console.log(A);
+    var B=new ClassA('sriram','sunflower');
+    // console.log(B)
+    A.display(20,30);
+    var arrayList=[];
+    arrayList.push(A,B)
+    console.log(arrayList)
+    </script>
+</body>
+</html>

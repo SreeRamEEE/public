@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sampleArray=[
+            {
+                name:'khyathi',
+                city:"hyd"
+            },
+            {
+                name:'hanu',
+                city:"mtm"
+            },
+            {
+                name:'sri',
+                city:"viz"
+            }
+        ]
+        var sampleArray2=[
+        {
+                name:'nani',
+                city:"hyd"
+            },
+            {
+                name:'srihan',
+                city:"mtm"
+            },
+            {
+                name:'sri',
+                city:"viz"
+            }
+
+        ]
+        var sampleObj={
+            name:'khyathi',
+            city:'hyd'
+        }
+
+        var filterArray= sampleArray.filter((item)=>{
+            return sampleObj.name!=item.name &&sampleObj.city!=item.city
+        })
+       
+
+       var newArray1=[...sampleArray,...sampleArray2];
+      console.log(newArray1.find((item)=>item.name==='test'))
+      var resultArray=[];
+     newArray1.forEach((item)=>{
+            //  if(!resultArray.find((findItem)=>findItem.name===item.name)){
+            //      resultArray.push(item)
+            //  }
+
+            if(!isItemAvailable(item)){
+                resultArray.push(item)
+            }
+            })
+
+        function isItemAvailable(item){
+           return resultArray.find((findItem)=>item.name===findItem.name);
+        }
+       
+       
+        
+    </script>
+
+    
+</body>
+</html>

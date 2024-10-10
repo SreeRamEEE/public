@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assendig_dessending_order</title>
+</head>
+<body>
+    <script>
+        // var givenNumbers=()=>{
+
+        // }
+      var a=[30,20,50,40,10,90]
+        console.log(a)
+
+        for( i=0;i<=a.length;i++){
+            for( j=i+1;j<=a.length;j++){
+                if(a[i]>a[j]){
+                //     var temp;
+                //   temp=a[i];
+                //   a[i]=a[j];
+                //   a[j]=temp;
+            a[i]=a[i]+a[j]; //with out using temp;
+            a[j]=a[i]-a[j]; 
+            a[i]=a[i]-a[j]
+                
+                }
+
+            }
+
+
+            
+        }
+        console.log(a);
+
+
+        for( i=0;i<=a.length;i++){
+            for( j=i+1;j<=a.length;j++){
+                if(a[i]<a[j]){
+                    var temp;
+                  temp=a[i];
+                  a[i]=a[j];
+                  a[j]=temp;
+                }
+            }
+        }
+        console.log(a)
+        
+    </script>
+</body>
+</html>

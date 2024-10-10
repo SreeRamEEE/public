@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LargestValueOfTheArray</title>
+</head>
+<body>
+    <script>
+      /**  var a=[20,40,30,10,90,60]
+        largest=a[0];
+        for(var i=1;i<a.length;i++){
+            if(largest<a[i]){
+                largest=a[i];
+            }
+        }
+        console.log(largest);**/
+
+        
+        //using functions
+        var givenNumbers=()=>{
+            var a=[20,30,40,100,90,60,10];
+            largest=a[0];
+
+            for(var i=1;i<a.length;i++){
+
+             var   result= CheckLargeNumber(a[i]);
+            }
+            console.log(largest);
+
+
+        }
+         var CheckLargeNumber=(n)=>{
+
+            if(largest<n){
+                largest=n;
+            }
+         }
+         givenNumbers();
+        
+    </script>
+</body>
+</html>

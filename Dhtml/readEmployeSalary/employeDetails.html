@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employe paySlip</title>
+</head>
+<link rel="stylesheet" href="employe.css">
+<script src="employe.js"></script>
+<body>
+    <h3>Employe PaySlip</h3>
+    <ul class="infoBlock">
+        <li>
+            <label for="Ename">Employe Name:</label>
+            <input type="text" name="Ename" id="employeName">
+        </li>
+        <li>
+            <label for="eAge"> Employe Age:</label>
+            <input type="number" name="eAge" id="employeAge">
+        </li>
+        <!-- <li>
+            <label for="eGender">Employe Gender:</label>
+            <input type="radio" name="eGender" >male
+            <input type="radio" name="eGender" >female
+        </li> -->
+        <li>
+            <label for="eDep">Employe Department:</label>
+           <select id="employeDepartment" name="eDep" >
+                <option value="eDep">IT</option>
+                <option value="eDep">TESTING</option>
+                <option value="eDep">SAP</option>
+                <option value="eDep">UI</option>
+            </select>
+        </li>
+        <li>
+            <label for="bSalary">Employe BasicSalary:</label>
+            <input type="number" name="bSalary" id="employeBSalary">
+        </li>
+        <li>
+            <input type="button"  value='submit' onclick="employeInfo()">
+        </li>
+        
+    </ul>
+
+
+    <ul class="paySlip">
+
+        <li>Employe Name: <span id="Ename"></span></li>
+        <li>Employe Age: <span id="Eage"></span></li>
+        <li>Employe Gender: <span id="eGender"></span></li>
+        <li>Employe Department: <span id="edep"></span></li>
+        <li>Employe BasicSalary: <span id="EBSalary"></span></li>
+
+        <li>Employe TotalSalary: <span id="TSalary"></span></li>
+    </ul>
+</body>
+</html>

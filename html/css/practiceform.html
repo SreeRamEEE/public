@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sample_form</title>
+        <style>
+             .total_content{
+                border: 1px solid white;
+                 border-radius: 10px ;
+                background-color: limegreen;
+                width: 500px;
+                margin: 10px auto;
+                padding: 10px;
+            }
+            .field{
+                border: 1px solid white;
+                border-radius: 5px;
+                padding: 10px ;
+                margin: 3px 20px;
+                background-color:  rgb(6, 235, 6);
+                /* opacity: 0.9; */
+                
+            }
+            .field label{
+                width :100px;
+                float: left;
+                
+            }
+            .field input,textarea{
+                border: none;
+                border-radius: 2px;
+            }
+            .buttons{
+
+                clear:left;
+                padding-top: 2px;
+            }
+            .submit{
+                clear: both;
+                width: 100px;
+                margin: 20px auto;
+
+
+
+            }
+            .submit input{
+                border-radius: 20px;
+                background-color: darkgreen;
+                color: white;
+                padding: 5px 20px;
+                /* width: 100px; */
+
+
+            }
+            h3{
+                margin-left:20px ;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="get"> 
+        <div class="total_content">
+            <div class="subContent">
+                <h3>Step 1:Your details</h3>
+                <div class="field">
+                    <div><label for="name">Name</label></div>
+                   <div> <input type="text"  name="name" placeholder="first and last name"></div>
+                </div>
+
+                <div class="field">
+                    <div><label for="email">Email</label></div>
+                   <div> <input type="email"  name="email" placeholder="examplegmail.com"></div>
+                </div>
+
+                <div class="field">
+                    <div><label for="num">Phone </label></div>
+                   <div> <input type="tel"  name="num" placeholder="+91 9876543210"></div>
+                </div>
+                
+            </div>
+            <div class="subContent">
+                <h3>Step 2: Delivery address</h3>
+                <div class="field">
+                    <div><label for="address">Address:</label></div>
+                   <div> <textarea  name="address"  maxlength="20px" rows="5px"></textarea></div>
+                </div>
+                <div class="field">
+                    <div><label for="code">Post code:</label></div>
+                   <div> <input type="text"  name="code" "></div>
+                </div>
+                <div class="field">
+                    <div><label for="country">Country:</label></div>
+                   <div> <input type="text"  name="country" "></div>
+                </div>
+
+
+
+            </div>
+            <div class="subContent">
+                <h3>Step 3:Card details</h3>
+                <div class="field ">
+
+                    <div><label for="Ctype">Card type</label></div>
+                    <div class="buttons">
+                  <input type="radio" name="Ctype">Visa
+                  <input type="radio" name="Ctype">Amex
+                  <input type="radio" name="Ctype">mastercard
+                </div>
+                </div>
+                <div class="field">
+                    <div><label for="CNum">card number:</label></div>
+                   <div> <input type="number"  name="name" ></div>
+                </div>
+                <div class="field">
+                    <div><label for="SCode">security code</label></div>
+                   <div> <input type="number"  name="SCode" ></div>
+                </div>
+
+                <div class="field">
+                    <div><label for="Cname">Nameon card</label></div>
+                   <div> <input type="text"  name="Cname" placeholder="exact name as the card"></div>
+                </div>
+
+            </div>
+            <div class="submit">
+                <input type="submit" name="sub" value="BUY IT!">
+            </div>
+        </div>
+        </form>
+    </body>
+</html>

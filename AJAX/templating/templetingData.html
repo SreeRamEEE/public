@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../jquery.js"></script>
+    <script src="../../handlebar.js"></script>
+    <!-- <script src="app.js"></script> -->
+   <link rel="stylesheet" href="app.css">
+   <script src="../../axios.js"></script>
+
+</head>
+<body>
+    <h3>Sample Products</h3>
+    <div class="loadingBlock">
+        <img src="https://media.tenor.com/6gHLhmwO87sAAAAi/gg.gif" alt="">
+    </div>
+    <div class="errorBlock">
+        please try again after some time...
+
+    </div>
+    <ul class="productContent"></ul>
+    
+      <!-- component/empty templete -->
+         <div id="productTemplete">
+            
+            <li class="sProductDetails">
+                <ul>
+                     <li>
+                        <img src="{{imgurl}}"alt="img">
+                    </li>
+                        <li>Product Name:{{Name}}</li>
+                        <li>Price:
+                            <span class="actualPrice">{{actualPrice}}</span>
+                            <span class="discounPrice">{{discountPrice}}</span>
+                        </li>
+                        <li>Company:{{company}}</li>
+                        <li>Rating:{{rating}}</li>
+             </ul>
+          </li>
+            
+            </div>
+     
+
+    <script src="app.js"></script>
+    
+</body>
+</html>

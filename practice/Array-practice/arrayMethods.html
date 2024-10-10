@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numArray=[1,2,33,44,6,7];
+      numArray.splice(2,2,3,4,5)
+        var itisAnarry=numArray.includes(7);
+        console.log(itisAnarry)
+        console.log("indexOf 6 is"+numArray.indexOf(6))
+       
+        console.log( numArray.join('-,'))
+
+
+        console.log("-----------------------------");
+        var message="hello every one";
+        console.log(message);
+        console.log(message.length);
+        console.log(message.charAt(9));
+        console.log(message.charCodeAt(9));
+        console.log(message.substring(9,2));
+        console.log(message.substr(2,9));
+        console.log(message.slice(9,2));
+        console.log(message.split())
+        console.log(message.split(''))
+        console.log(message.split(' '));
+        console.log(message.includes('ne'));
+        console.log(message.indexOf('o'))
+        console.log("...................................")
+
+
+        // sort() method
+     var data=[2,5,6,1,1,9]
+     console.log(data)
+       data.sort()
+        console.log(data)
+      
+        var names=['cat','dog','apple','egg','ball','fish'];
+    
+        names.sort();
+        console.log(names)
+     
+        var stringnum=['khyathi',1,'nani',4,5,0,'ball']
+       
+        console.log(stringnum.sort())
+         
+        var  largenum=[30,100,50,2.2,1,10]
+       
+       
+       
+       
+        largenum.sort((a,b)=>{
+            return a-b
+        })
+        console.log(largenum)
+
+        largenum.sort((a,b)=>{
+            return b-a
+        })
+        console.log(largenum)
+
+
+        
+    </script>
+    
+</body>
+</html>

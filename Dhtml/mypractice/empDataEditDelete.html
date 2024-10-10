@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employe setails edit and delete</title>
+    <style>
+        div{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- user enter data -->
+    <div>
+        <label > Employe Name:</label>
+        <input type="text" id="eName">
+    </div>
+    <div>
+        <label > Employe age:</label>
+        <input type="text" id="eAge">
+    </div>
+    <div>
+        <label > city:</label>
+        <input type="text" id="eCity">
+    </div>
+    <div>
+        <input type="button" value="submit"onclick='submitData()'>
+    </div>
+    <div id="empTable">
+
+    </div>
+    <!--  -->
+    <script>
+        var empArray=[];
+        var tableHeader=['Name','age','city','action'];
+        var edit=false;
+        var editObj;
+
+        // display table in webpage
+        var displayTable=()=>{
+          var emptable=document.getElementById('empTable');
+          var createTable=`<table id='diaplayTable'> <thead> <tr>`;
+            var header='';
+            for(i=0;i<tableHeader.length;i++){
+                header= `${header}<th>${tableHeader[i]}</th>`
+            }
+            var tbody=`${header}</tr></thead><tbody>`
+                var tr='';
+                for(j=0;j<empArray.length;j++){
+                    tr=`${tr}<tr>
+                        <td>${empArray[j].name}</td>
+                        <td>${empArray[j].age}</td>
+                        <td>${empArray[j].city}</td>
+                        <td  >
+                            <button onclick="editData(${empArray[j].employeeID})">Edit</button>
+                            <button onclick="deleteData(${empArray[j].employeeID})">Delete</button>
+                        </td>
+                        
+                        </tr>
+                            `
+                };
+                tbody=`${tbody}${tr}</tbody></table>`;
+                createTable=`${createTable}${tbody}`;
+                emptable.innerHTML=createTable;
+
+                resetData();
+            }
+            var resetData=()=>{
+                document.getElementById('eName').value='',
+                document.getElementById('eAge').value='',
+                document.getElementById('eCity').value=''
+            }
+           var  reEditData=(editObj)=>{
+            document.getElementById('eName').value=editObj.name;
+            document.getElementById('eAge').value=editObj.age;
+            document.getElementById('eCity').value=editObj.city;
+
+
+           }
+            function editData(employeeID){
+                edit=true;
+               
+                for( var k=0;k<empArray.length;k++){
+                    if(empArray[k].employeeID===employeeID){
+                       editObj =empArray[k];
+                    }
+
+                }
+               
+                if(editObj){
+                    reEditData(editObj);
+                }
+
+
+            }
+            function deleteData(employeeID){
+                var filterdArray=[];
+
+              for(var i=0;i<empArray.length;i++){
+                if(empArray[i].employeeID===employeeID){
+
+                }else{
+                    filterdArray.push(empArray[i]);
+                }
+              }
+                empArray=filterdArray;
+                displayTable();
+            
+           }
+
+          function upddateArrayData(updateObj){
+            
+            
+            for( var k=0;k<empArray.length;k++){
+                    if(empArray[k].employeeID===updateObj.employeeID){
+
+                        empArray[k].name=updateObj.name;
+                        empArray[k].age=updateObj.age;
+                        empArray[k].city=updateObj.city;
+
+                    }
+
+                }
+
+           }
+
+                
+        //  object get the input elements   
+        
+        function submitData(){
+            if(edit){
+                var updateData={
+                    name:document.getElementById('eName').value,
+             age:document.getElementById('eAge').value,
+             city:document.getElementById('eCity').value,
+                    employeeID:editObj.employeeID
+
+            }
+            upddateArrayData(updateData);
+            edit=false;
+            displayTable();
+
+            }else{
+                var empObj={
+                    name:document.getElementById('eName').value,
+            age:document.getElementById('eAge').value,
+            city:document.getElementById('eCity').value,
+            employeeID:Math.floor(100000 + Math.random() * 900000)
+
+
+            }
+            empArray.push(empObj);
+            // console.log(empObj)
+            displayTable();
+
+            }
+
+            
+           
+        }
+        
+    </script>
+</body>
+</html>

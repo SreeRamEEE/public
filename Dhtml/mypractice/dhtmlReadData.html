@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label >Name</label>
+        <input type="text" id="name">
+    </div>
+    <div>
+        <label >salary</label>
+        <input type="number"  id="salary">
+
+    </div>
+    <div>
+        <input type="button" onclick="save()" value="save">
+    </div>
+    <ul id="ullist">
+
+    </ul>
+    <script>
+        var empArray=[];
+         var isedit=false;
+         var editindex;
+         var editObj;
+       
+       function save(){
+        if(isedit){
+            
+
+            var empEditObj={
+
+                name:document.getElementById('name').value,
+            salary:document.getElementById('salary').value,
+
+            }
+            var empNewObj=onHandAmountCal(empEditObj);
+            updateData(empNewObj);
+        
+            listData();
+
+        }else{
+            var  empObj={
+            name:document.getElementById('name').value,
+            salary:document.getElementById('salary').value,
+        }
+        console.log(empObj)
+        var empNewObj=onHandAmountCal(empObj);
+        
+        empArray.push(empNewObj);
+        reset();
+        listData();
+    
+        }
+     
+       }
+       function onHandAmountCal(inputObj){
+        inputObj.pf=empPfCal(inputObj.salary)
+        inputObj.tax=empTaxCal(inputObj.salary);
+        inputObj.totalSalary=empTSalaryCal(inputObj.salary,inputObj.pf,inputObj.tax);
+
+        return inputObj;
+        
+       }
+       function empPfCal(salary){
+        return salary*0.12;
+       }
+       function empTaxCal(salary){
+        if(salary>500000){
+            return salary*0.20;
+        }
+        return 0;
+
+       }
+       function empTSalaryCal( salary, pf, tax){
+        return salary-pf-tax;
+       }
+       function reset(){
+            document.getElementById('name').value='',
+            document.getElementById('salary').value=''
+        }
+        function listData(){
+            debugger;
+            var items=document.getElementById('ullist');
+            var lilist='';
+            for(var i=0;i<empArray.length;i++){
+                lilist=`${lilist}<li> ${empArray[i].name}</li>
+                <li> ${empArray[i].salary}</li>
+                <li> ${empArray[i].pf}</li> 
+                <li> ${empArray[i].tax}</li> 
+                <li> ${empArray[i].totalSalary}</li> 
+                <button onclick="editData(${i})">edit</edit>
+
+                    <button onclick="deleteData(${i})">delete</button>
+                  `
+                
+            }
+            items.innerHTML=lilist;
+            
+        }
+        function updateData(inputObj){
+            for(i=0;i<empArray.length;i++){
+                if(i==editindex)
+            empArray[i].name=inputObj.name;
+            empArray[i].salary=inputObj.salary;
+            empArray[i].pf=inputObj.pf;
+            empArray[i].tax=inputObj.tax;
+            empArray[i].totalSalary=inputObj.totalSalary;
+            }
+        }
+                
+      var setlist=(inputObj)=>{
+        document.getElementById('name').value=inputObj.name;
+        document.getElementById('salary').value=inputObj.salary;
+
+      }
+        function editData(index){
+            isedit=true;
+            debugger;
+
+            for(var i=0;i<empArray.length;i++){
+                if(i===index){
+                    editindex=index;
+                    editObj=empArray[i];
+                }
+
+                
+            }
+            setlist(editObj);
+
+        }
+        function deleteData(index){
+            var empNewArray=[];
+    
+            for(i=0;i<empArray.length;i++){
+
+            
+            if(index===i){
+
+            }
+            else{
+                empNewArray.push(empArray[i]);
+
+            }
+        }
+            empArray=empNewArray;
+            listData();
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .subBlock{
+            border: 1px solid;
+            background-color: green;
+            color:white;
+            display: inline-block;
+            margin: 4px;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            text-align: center;
+            /* align-items: center;
+            justify-content: center; */
+            /* padding: 40px; */
+        }
+        #block{
+            border: 1px solid;
+            padding: 10px;
+            width: 500px;
+            margin: 10px auto;
+        }
+        #randomNum{
+            font-size: 50px;
+            margin: 50px;
+        }
+        .red{
+            background-color: red;
+        }
+        
+        h1{
+            text-align: center;
+            margin: 0;
+        }
+        .color{
+            background-color: red;
+        }
+    </style>
+</head>
+<h1>Coin Picker</h1>
+<input type="button" value="New Number" onclick="getNumber()" >
+<span id="randomNum"></span>
+<div id="block">
+<div class="mainBlock">
+   
+    <!-- <span class="subBlock" ></span> -->
+    
+   
+
+</div>
+</div>
+
+<div id="test">
+    <span>Hello</span> world
+</div>
+
+<body>
+    <script>
+        //   var num=[1,2,3,4,5,6,7,8,9,10];
+
+        var randomNum=[];
+       function displayNum(){
+      
+       
+
+        for(i=1;i<=100;i++){
+            
+                var spantag=document.createElement('span')
+                spantag.setAttribute("class","subBlock")
+                 spantag.setAttribute('data-id',i)
+                spantag.innerText=i;
+                document.querySelector(".mainBlock").append(spantag);
+               
+                }
+        
+       }
+       displayNum();
+       
+
+       getNumber=()=>{
+       if(randomNum.length===100){
+        alert("Game End")
+       }else{
+                 var minRange = 1;
+                var maxRange = 100;
+                var randomValue = (Math.random() * (maxRange - minRange)) + minRange;
+                randomValue = Math.round(randomValue);
+                if(!randomNum.includes(randomValue)){
+                 document.getElementById('randomNum').innerText=randomValue;
+
+                randomNum.push(randomValue);
+                var spanEle= document.querySelector(`span[data-id="${randomValue}"]`);
+                spanEle.classList.add('red');
+                  //  spanEle.setAttribute("class","color subBlock ");
+                // spanEle.setAttribute('style','background-color:red;color:black;')
+                
+               //spanEle.style['background-color']="red";
+                // if(randomNum.length===100){
+                //     alert('Game End')
+                // }
+                }else{
+                    getNumber();
+                
+                }
+
+              
+       }
+       
+
+                //cons.log(randomNum.length)
+          
+         
+        }
+       
+       
+        // getNumber();
+    </script>
+</body>
+</html>

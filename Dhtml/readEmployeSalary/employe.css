@@ -1,0 +1,17 @@
+h3{
+    text-align: center;
+}
+.paySlip{
+    /* display: none; */
+}
+li{
+    list-style-type: none;
+    margin: 10px;
+}
+ul{
+    border: 1px solid;
+    width: 500px;
+    margin: 10px auto;
+    padding: 30px;
+    background-color: antiquewhite;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .block{
+                border: 1px solid;
+                width: 100px;
+                height: 100px;
+            }
+            .block1{
+                background-color: aqua;
+                position: static;
+                top: 200px;
+                left: 200px;
+            }
+            .block2{
+                position: relative;
+                top: 20px;
+                left: 80px;
+                width: 500px;
+                height: 600px;
+                background-color: burlywood;
+            }
+            .block8 {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border: 1px solid;
+                right: 0px;
+                /* height: 10px; */
+            }
+            .block3{
+                background-color: blue;
+                position: absolute;
+                top: 100px;
+                left:200px
+
+            }
+            .block4{
+                background-color: darkkhaki;
+                /* position: relative; */
+            }
+            .absolute{
+                border: 1px solid;
+                /* color: blue; */
+                width: 500px;
+                height: 500px;
+                position: absolute;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="block block1">block 1
+            <br>position static
+        </div>
+        <div class="block block2">block2
+            <br>position relative
+        <div class="block8">block*(absolute)</div>
+
+        </div>
+        <div class="absolute">
+            <center>absolute_parent</center>
+        <div class="block block3">block3 <br>
+        position absolute</div>
+    </div>
+        <div class="block block4">block4</div>
+    
+    </body>
+</html>
+
